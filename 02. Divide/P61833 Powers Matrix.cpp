@@ -20,11 +20,11 @@ void modMatrix(Matrix& m) {
 	m[1][1] %= mod;
 }
 
-bool readMatrix(Matrix& m) {
+bool readMatrix(Matrix& m) { // Direct read of a matrix
 	return (cin >> m[0][0] and cin >> m[0][1] and cin >> m[1][0] and cin >> m[1][1]);
 }
 
-void matrixSquared(Matrix m, Matrix& sqr) {
+void matrixSquared(Matrix m, Matrix& sqr) { // Multiplication of two matrixs
 	sqr[0][0] = m[0][0] * m[0][0] + m[0][1] * m[1][0];
 	sqr[0][1] = m[0][0] * m[0][1] + m[1][1] * m[0][1];
 	sqr[1][0] = m[0][0] * m[1][0] + m[1][1] * m[1][0];
@@ -48,7 +48,7 @@ void multiplyMatrix(const Matrix m1, const Matrix m2, Matrix& m) {
 	modMatrix(m);
 }
 
-void printMatrix(const Matrix& m) {
+void printMatrix(const Matrix& m) { // Print a 2x2 Matrix
 	cout << m[0][0] << ' ' << m[0][1] << endl << m[1][0] << ' ' << m[1][1] << endl;
 }
 
