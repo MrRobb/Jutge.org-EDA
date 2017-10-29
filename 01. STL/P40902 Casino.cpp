@@ -19,33 +19,26 @@ int main() {
 		int x;
 		if (what == "wins") {
 			cin >> x;
-			if (m.find(who) == m.end()) {
+			if (m.find(who) == m.end())
 				cout << who << " is not in the casino" << endl;
-			}
-			else {
+			else
 				m[who] += x;
-			}
 		}
 		else if (what == "leaves") {
-			if (m.find(who) == m.end()) {
+			if (m.find(who) == m.end())
 				cout << who << " is not in the casino" << endl;
-			}
 			else {
 				cout << who << " has won " << m[who] << endl;
 				m.erase(who);
 			}
 		}
 		else {
-			if (m.find(who) != m.end()) {
+			if (m.find(who) != m.end())
 				cout << who << " is already in the casino" << endl;
-			}
-			else {
-				m[who] = 0;
-			}
+			else m[who] = 0;
 		}
 	}
 	cout << "----------" << endl;
-	for (auto it : m) {
+	for (auto it : m)
 		cout << it.first << " is winning " << it.second << endl;
-	}
 }
