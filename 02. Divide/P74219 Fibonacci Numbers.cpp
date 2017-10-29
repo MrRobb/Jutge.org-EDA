@@ -15,8 +15,7 @@ typedef int Matrix[2][2];
 
 int mod;
 
-void multiply(int F[2][2], int M[2][2])
-{
+void multiply(int F[2][2], int M[2][2]) { // Multiply 2x2 matrixs
 	int x =  F[0][0]*M[0][0] + F[0][1]*M[1][0];
 	int y =  F[0][0]*M[0][1] + F[0][1]*M[1][1];
 	int z =  F[1][0]*M[0][0] + F[1][1]*M[1][0];
@@ -28,25 +27,19 @@ void multiply(int F[2][2], int M[2][2])
 	F[1][1] = w % mod;
 }
 
-void power(Matrix &m, int n)
-{
-	if (n == 0 || n == 1)
-		return;
+void power(Matrix &m, int n) {
+	if (n == 0 || n == 1) return;
 	
 	Matrix a = {{1,1},{1,0}};
 	power(m, n / 2);
 	multiply(m, m);
 	
-	if (n % 2 != 0)
-		multiply(m, a);
+	if (n % 2 != 0) multiply(m, a);
 }
 
-int fibonacci(int n)
-{
-	if (n == 0)
-		return 0;
-	else
-	{
+int fibonacci(int n) {
+	if (n == 0) return 0;
+	else {
 		Matrix m = {{1,1},{1,0}};
 		power(m, n - 1);
 		return m[0][0];
@@ -56,9 +49,6 @@ int fibonacci(int n)
 int main()
 {
 	int n;
-	while (cin >> n >> mod)
-	{
-		cout << fibonacci(n) << endl;
-	}
+	while (cin >> n >> mod)	cout << fibonacci(n) << endl;	
 }
 
