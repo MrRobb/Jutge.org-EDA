@@ -25,14 +25,16 @@ int main() {
 				m[who] += x;
 		}
 		else if (what == "leaves") {
-			if (m.find(who) == m.end()) cout << who << " is not in the casino" << endl;
+			if (m.find(who) == m.end())
+				cout << who << " is not in the casino" << endl;
 			else {
 				cout << who << " has won " << m[who] << endl;
 				m.erase(who);
 			}
 		}
 		else {
-			if (m.find(who) != m.end()) cout << who << " is already in the casino" << endl;
+			if (m.find(who) != m.end())
+				cout << who << " is already in the casino" << endl;
 			else m[who] = 0;
 		}
 	}
